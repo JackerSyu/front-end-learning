@@ -1,35 +1,24 @@
 body {
-  background: url(http://cdn.leagueoflegends.com/lolkit/1.1.6/resources/images/bg-default.jpg) no-repeat center;
+  background: url("http://cdn.leagueoflegends.com/lolkit/1.1.6/resources/images/bg-default.jpg") no-repeat center;
   background-attachment: fixed;
   margin: 0;
 }
-
 .container {
   background: rgba(0,0,0,0.5);
   min-height: 100vh;
   padding-top: 30px;
 }
-
-.row{
-  width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.preview img{
+.preview img {
   width: 100%;
-  vertical-align:bottom; /* 解決 預覽下方空隙 */
+  vertical-align: bottom;
 }
 .bottom {
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.4);
   padding: 10px;
   position: relative;
   display: flex;
   align-items: center;
 }
-
 .avatar {
   width: 60px;
   height: 60px;
@@ -37,27 +26,38 @@ body {
   border-radius: 50%;
   margin-right: 15px;
 }
-
 .avatar img {
   width: 100%;
-  
 }
-
-.col{
+.row {
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.col {
   width: 300px;
   display: inline-block;
+  box-sizing: border-box;
+  border: 0.5px solid rgba(255,255,255,0.1);
   margin-bottom: 30px;
+  transition: all 0.5s;
 }
-
-
-.intro{
-  color: white;
+.col:hover {
+  cursor: pointer;
+  box-shadow: 5px 5px 20px 5px rgba(0,0,0,0.5);
+  -webkit-filter: brightness(1.4);
+  filter: brightness(1.4);
+  -webkit-filter: brightness(1.4);
 }
-
-.channel_name{
+.intro {
+  color: #fff;
+}
+.channel_name {
   margin-bottom: 0px;
-  white-space: nowrap; /*字太多也不換行*/
-  text-overflow: ellipsis; /* 字太多變... */
+  white-space: nowrap;
+  text-overflow: ellipsis;
   overflow: hidden;
-  width: 200px; /* 要設定寬度上面的才有用 */
+  width: 200px;
 }
