@@ -3,6 +3,35 @@
 ## [click here to watch the page](https://jackersyu.github.io/front-end-learning/huli-1)
 
 
+### PlaceHolder day4 2019-3-17
+
+### PlaceHolder
+
+- 在圖片尚未從twitch的網站下載回來時，先用自己預設的圖片代替，以免跑版
+- 放兩張圖片在同一個div 將圖片位置高度寫死(relative, absolute)
+- 載入完成讓真的圖片蓋掉(z-index relative)
+- 把真的圖片opacity設成 0（透過onload事件 設成1）
+- transition應用
+- before應用
+- base64 image （加速載入img，圖片不能太大，encode完檔案變大）
+  
+### Infinite scroll
+
+- instruction 
+  - $(document).height()
+  - $(window).height()
+  - $(window).scrollTop()
+  - $(window).height() + $(window).scrollTop() === $(document).height() 表示拉到底部
+  - check the isLoading Usage in script.js
+
+
+- 今天遇到的一些問題（無關課程）
+- git 問題 推不上去 解法 -> https://gitbook.tw/chapters/github/fail-to-push.html 
+- 無法編譯stylus
+  - 解决 Block-scoped declarations (let, const, function, class) not yet supported outside strict mode at
+  - [執行以下](https://blog.csdn.net/tianlongtc/article/details/80230761)
+
+  
 ### 2019-3-16 day3
 
 - 練習使用twitch 的API
