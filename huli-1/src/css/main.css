@@ -8,6 +8,27 @@ body {
   min-height: 100vh;
   padding-top: 30px;
 }
+.menu {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  color: #fff;
+  height: 60px;
+}
+.lang {
+  display: flex;
+  font-size: 18px;
+  height: 60px;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+}
+.lang a {
+  cursor: pointer;
+}
+.lang a:hover {
+  color: #873fbf;
+}
 .preview {
   height: 168px;
   position: relative;

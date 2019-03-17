@@ -1,12 +1,20 @@
 let nowIndex = 0;
 let isLoading = false;
+let LANG = 'zh-tw';
+
+function changeLang(lang){
+  $('.menu h1').text(window.I18N[lang]['TITLE']);
+  LANG = lang;
+  $('.row').empty();
+  appendData(LANG);
+}
 
 
 // clientId 到這：https://dev.twitch.tv/docs/v5/#introduction
-function getData (cb) {
+function getData (lang, cb) {
     const clientId = 'wnlc89u86vwa7lrmdnzz7haxdatq1z';
     const limit = 10;
-    const apiUrl = `https://api.twitch.tv/kraken/streams/?client_id=${clientId}&game=League%20of%20Legends&limit=${limit}&offset=${nowIndex}`
+    const apiUrl = `https://api.twitch.tv/kraken/streams/?client_id=${clientId}&game=League%20of%20Legends&limit=${limit}&offset=${nowIndex}&language=${lang}`
     
     isLoading = true;
 
@@ -19,8 +27,8 @@ function getData (cb) {
     })
 }
 
-function appendData(){
-  getData((err, data) => {
+function appendData(lang){
+  getData(lang,(err, data) => {
     const {streams} = data; // 即 const streams = data.streams;
     const $row = $('.row'); // html 裏的 class='row'
     for(let stream of streams)
@@ -33,12 +41,12 @@ function appendData(){
 }
 
 $(document).ready(() =>{
-  appendData();
+  appendData(LANG);
   $(window).scroll(() => {
     if($(window).scrollTop() + $(window).height() >= $(document).height() - 200)
     {
       if(!isLoading){
-        appendData();
+        appendData(LANG);
       }
     }
   

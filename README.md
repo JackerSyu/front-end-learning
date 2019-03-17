@@ -3,7 +3,34 @@
 ## [click here to watch the page](https://jackersyu.github.io/front-end-learning/huli-1)
 
 
-### PlaceHolder day4 2019-3-17
+### day4 2019-3-17
+
+
+### I18N
+
+- 利用i18n轉換語言
+- 做選項（中文、英文）
+- 到twitch抓不同語言的stream
+- 利用lang-en.js/lang-zh-tw.js做轉換字串
+- 到html的tag加上 onload=FUNCTION
+
+
+### vanilla js
+
+優點：
+1. 效率高（考慮程式規模，太小無法發揮作用）
+2. 節省jquery包的空間（節省30kb）
+
+缺點：
+1. 不好維護
+2. 瀏覽器兼容性問題
+3. 團隊協作困難（別人不會vanilla js）
+
+重點：
+
+- trade-off 權衡： 評估效能到底增加多少？ 
+
+
 
 ### PlaceHolder
 
