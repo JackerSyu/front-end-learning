@@ -1,6 +1,6 @@
 # Huli front-end mentor program
 
-## (click here to watch the page)[https://jackersyu.github.io/front-end-learning/huli-1]
+## [click here to watch the page](https://jackersyu.github.io/front-end-learning/huli-1)
 
 
 ### 2019-3-16 day3
