@@ -3,7 +3,9 @@ let isLoading = false;
 let LANG = 'zh-tw';
 
 function changeLang(lang){
+  console.log("change language : "+ lang);
   $('.menu h1').text(window.I18N[lang]['TITLE']);
+  nowIndex = 0;
   LANG = lang;
   $('.row').empty();
   appendData(LANG);
@@ -13,7 +15,7 @@ function changeLang(lang){
 // clientId 到這：https://dev.twitch.tv/docs/v5/#introduction
 function getData (lang, cb) {
     const clientId = 'wnlc89u86vwa7lrmdnzz7haxdatq1z';
-    const limit = 10;
+    const limit = 20;
     const apiUrl = `https://api.twitch.tv/kraken/streams/?client_id=${clientId}&game=League%20of%20Legends&limit=${limit}&offset=${nowIndex}&language=${lang}`
     
     isLoading = true;
@@ -35,7 +37,7 @@ function appendData(lang){
     {
       $row.append(getColumn(stream));
     }
-    nowIndex += 10;
+    nowIndex += 20;
     isLoading = false;
   })
 }
@@ -43,7 +45,7 @@ function appendData(lang){
 $(document).ready(() =>{
   appendData(LANG);
   $(window).scroll(() => {
-    if($(window).scrollTop() + $(window).height() >= $(document).height() - 200)
+    if($(window).scrollTop() + $(window).height() > $(document).height() - 200)
     {
       if(!isLoading){
         appendData(LANG);

@@ -3,6 +3,16 @@
 ## [click here to watch the page](https://jackersyu.github.io/front-end-learning/huli-1)
 
 
+### day5 2019-3-18
+
+### bug fixed 
+
+問題：
+
+- 連續點擊中文，讀取不到中文串流，有時候只抓到幾筆
+- 解決：當轉換語言時沒有初始化頁碼（offset），在 changeLang function 中加入nowindex = 0 即可
+
+
 ### day4 2019-3-17
 
 
