@@ -3,8 +3,31 @@
 ## [click here to watch the page](https://jackersyu.github.io/front-end-learning/huli-1)
 
 
+
+## day 6 2019-3-22
+
+### Javascript DOM Operation  
+
+- to realize the DOM operation 
+
+- useful DOM operation
+  1. document.addEventListener('DOMContentLoaded', function(){})
+  2. document.querySelector('{id/class}')
+  3. you can also do ->      document.querySelector('#id/.class').addEventListener('click', () => {})
+  4. document.createElement('(tag)')
+  5. document.querySelector('#id/.class').appendChild(item)
+  6. document.querySelector('#id/.class').removeChild(item)
+  7. **The Usage of e / e.target**
+
+
 ### day5 2019-3-18
 
+### laravel framework
+
+- 嘗試切入一點後端的東西
+- 今天弄環境弄蠻久的
+- Xampp + laravel的安裝
+- https://ithelp.ithome.com.tw/articles/10193428
 ### bug fixed 
 
 問題：

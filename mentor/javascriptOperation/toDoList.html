@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body
+    {
+        margin: 15px;
+        font-size: 20px;
+    }
+    .inputClass
+    {
+        margin-left: 15px;
+    }
+    .del
+    {
+      color: red;
+    }
+    .del:hover
+    {
+      cursor: pointer;
+    }
+  </style>
+  <script type='text/javascript'> 
+    document.addEventListener('DOMContentLoaded', function()
+    {
+      // to add the item of list
+      document.querySelector('#add').addEventListener('click', () => 
+      {
+        var text = document.querySelector('.inputId')
+        var item = document.createElement('li')
+        // alert('you have already added the content :  ' + text.value)
+        // to add the delete sign
+        item.innerHTML = `
+        <div>
+          ${text.value}
+          <span class='del'>X</span>
+        </div>
+        `
+        // document.querySelector('.list').innerHTML += '<li>' + text.value + '</li>'
+        document.querySelector('.list').appendChild(item)
+        text.value = ''
+      })
+      // to deal with delete operation
+      document.querySelector('.list').addEventListener('click', e =>{
+          for (var i = 0; i < e.target.classList.length;i++)
+          {
+            if (e.target.classList[i] === 'del')
+            {
+              document.querySelector('.list').removeChild(e.target.parentNode.parentNode)
+            }
+          }
+        })
+    })
+
+
+  </script>
+
+</head>
+<body>
+    <ul class='list'>
+        <li>Do homework</li>
+        <li>prepare the midtern</li>
+    </ul>
+    <div class='inputClass'>
+        <input type='text' class='inputId' placeholder="input the todo">
+        <input type='button' id='add' value='add'>
+    </div>
+</body>
+</html>
