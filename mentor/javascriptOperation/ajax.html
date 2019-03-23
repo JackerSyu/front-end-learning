@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ajax</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type='text/javascript'>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('button').addEventListener('click', () =>{
+                var id = document.querySelector('input').value
+                var request = new XMLHttpRequest()
+
+                request.open('GET', 'https://jsonplaceholder.typicode.com/posts/' + id, true) // true 代表要非同步，同步的話要等response回來才會繼續執行下面的程式
+                // 收到response 執行下面的function
+                request.onload = () => {
+                    if(request.status >= 200 && request.status < 400)
+                    {
+                        var resp = request.responseText
+                        document.querySelector('.response').innerText = resp
+                    }
+                    else
+                    {
+                        document.querySelector('.response').innerText = 'error'
+                    }
+                }
+                request.send()
+
+            })
+        })
+        
+    
+    </script>
+</head>
+<body>
+    <div class='content'>
+        id: <input type='text'/>
+        <button name='submit'>search</button>
+    </div>
+    <div class='response'>
+
+    </div>
+</body>
+</html>

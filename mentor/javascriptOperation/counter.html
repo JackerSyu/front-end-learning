@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+        .num {
+            margin: 5px;
+        }
+    </style>
+    <script type="text/javascript">
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector("#sub").addEventListener('click', () => {
+                doCal('sub')
+            })
+            document.querySelector("#add").addEventListener('click', () => {
+                doCal('add')
+            })
+        })
+
+        function doCal(op)
+            {   
+                var number = parseInt(document.querySelector("#content").innerText)
+                var contentElement = document.querySelector("#content")
+
+                if(op === 'sub')
+                {
+                    number--;
+                }
+                else if(op === 'add')
+                {
+                    number++;
+                }
+
+                document.querySelector("#content").innerText = number
+                
+                if(number < 0)
+                {
+                    contentElement.style.color = 'red'
+                }
+                else
+                {
+                    contentElement.style.color = 'black'
+                }
+            }
+
+        
+        
+    </script>
+</head>
+<body>
+
+    <div class="num">
+        <h1 id="content">5</h1>
+        <input type="button" value="-1" id="sub">
+        <input type="button" value="+1" id="add">
+    </div>
+
+</body>
+</html>

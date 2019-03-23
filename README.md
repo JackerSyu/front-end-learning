@@ -4,6 +4,34 @@
 
 
 
+## day7 2019-3-23
+
+### html + javascript simple form validation
+
+- learn how to make the form validation 
+
+### HTTP & AJAX
+
+- GET vs POST
+  1. GET 會在網址後面加參數， ？a=1&b=c
+  2. 會自動做 URL encoded
+  3. 因爲是網址 所以會有長度限制
+  4. 因爲網址會顯示參數，不會放敏感資訊
+     http://a.com/login?user=123&password=abc
+  5. GET 資源通常不變，例如淘寶查詢頁面
+
+
+  1. POST 把參數放在request body裏面
+  2. 適合放敏感資訊，網址不會顯示
+  3. POST http://a.com/login
+     body: user=123 password=abc  
+  4. POST 無法復制網址，不會給別人網址就完成轉賬
+- AJAX: 簡單的說就是，透過瀏覽器的API，可以不換頁(clean all requests)就跟 Server 做溝通
+  應用： 輸入賬號就能確認賬號有沒有重復、留言之後不會換頁
+- 同步vs非同步：同步需要等到收到Server端的response才會繼續往下執行程式碼（畫面會凍住）
+非同步則是利用一個callback function，先繼續執行下面程式，等收到response在回到callback function 去執行裏面的程式。
+
+
 ## day 6 2019-3-22
 
 ### Javascript DOM Operation  
@@ -11,7 +39,7 @@
 - to realize the DOM operation 
 
 - useful DOM operation
-  1. document.addEventListener('DOMContentLoaded', function(){})
+  1. document.addEventListener('DOMContentLoaded', function(){})  ('當這個event發生', 執行這個function{} ) （callback function 的概念）
   2. document.querySelector('{id/class}')
   3. you can also do ->      document.querySelector('#id/.class').addEventListener('click', () => {})
   4. document.createElement('(tag)')

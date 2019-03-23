@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Simple form operation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+    
+    </style>
+
+    <script type='text/javascript'>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('form').addEventListener('submit', (e) => {
+                var inputName = document.querySelector('.name').value
+                // 空字串就不submit
+                if(inputName === '')
+                {
+                    alert('can not be empty!')
+                    // 阻止預設的行爲（submit）
+                    e.preventDefault()
+                }
+                else
+                {
+                    alert('Hi! ' + inputName)
+                }
+            })
+        })
+
+
+        // function test()
+        // {
+        //     alert("you submit!")
+        // }
+
+    </script>
+</head>
+<body>
+    <!-- <form onsubmit='test()'> -->
+    <form>
+        name: <input type="text" class='name' placeholder="Please input your name"/>
+        <input type="submit" />
+    </form>
+</body>
+</html>
