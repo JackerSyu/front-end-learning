@@ -1,8 +1,17 @@
 # Huli front-end mentor program
 
 ## [click here to watch the page](https://jackersyu.github.io/front-end-learning/huli-1)
+## [Twitch API Pracetice](https://timothysyu.000webhostapp.com/)
 ## [back-end-learning](https://github.com/JackerSyu/back-end-mentor)
 ## [from huli's Lidemy](https://www.lidemy.com/)
+
+## 2019 4-3
+
+### 嘗試部署到雲端上
+
+- 原本要deploy到Heroku但是連結資料庫，必須先掛上信用卡，我的信用卡無法驗證...就嘗試其他平臺
+- 000webhostapp 可以掛資料庫但是掛起來很怪，我的php連接資料庫的地方壞掉..
+
 
 ## day7 2019-3-23
 
