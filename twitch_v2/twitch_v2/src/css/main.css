@@ -10,6 +10,7 @@ body {
 
 #mainNavbar {
   font-size: 1.5rem;
+  font-weight: 300;    
   background: #563d7c;
 }
 
