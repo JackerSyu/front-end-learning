@@ -120,7 +120,7 @@ function getCaro(data)
         
         <div class="carousel-item active">
           <a href="${data[0].channel.url}">
-            <img src="${data[0].preview.large}" alt="Los Angeles" width="1100" height="500">
+            <img src="${data[0].channel.video_banner}" alt="Los Angeles" width="1100" height="500">
           </a>
           <div class="carousel-caption">
             <h3>${data[0].channel.display_name}</h3>
@@ -130,7 +130,7 @@ function getCaro(data)
         
           <div class="carousel-item">
           <a href="${data[1].channel.url}">
-            <img src="${data[1].preview.large}" alt="Chicago" width="1100" height="500">
+            <img src="${data[1].channel.video_banner}" alt="Chicago" width="1100" height="500">
           </a>
             <div class="carousel-caption">
               <h3>${data[1].channel.display_name}</h3>
@@ -140,7 +140,7 @@ function getCaro(data)
         
           <div class="carousel-item">
             <a href="${data[2].channel.url}">
-              <img src="${data[2].preview.large}" alt="New York" width="1100" height="500">
+              <img src="${data[2].channel.video_banner}" alt="New York" width="1100" height="500">
             </a>
             <div class="carousel-caption">
               <h3>${data[2].channel.display_name}</h3>
