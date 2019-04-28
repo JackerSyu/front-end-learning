@@ -8,7 +8,9 @@ function changeLang(lang){
   nowIndex = 0;
   LANG = lang;
   $('.deafult-row').empty();
+  $('.carousel_model').empty();
   appendData(LANG);
+  appendCaro(LANG);
 }
 
 
@@ -29,6 +31,20 @@ function getData (lang, cb) {
     })
 }
 
+function getDataCaro (lang, cb) {
+  const clientId = 'wnlc89u86vwa7lrmdnzz7haxdatq1z';
+  const limit = 3;
+  const apiUrl = `https://api.twitch.tv/kraken/streams/?client_id=${clientId}&game=League%20of%20Legends&limit=${limit}&offset=${nowIndex}&language=${lang}`
+
+  $.ajax({
+      url: apiUrl,
+      success:(response) =>{
+          console.log(response);
+          cb(null, response);
+      }
+  })
+}
+
 function appendData(lang){
   getData(lang,(err, data) => {
     const {streams} = data; // 即 const streams = data.streams;
@@ -42,9 +58,18 @@ function appendData(lang){
   })
 }
 
+function appendCaro(lang){
+  getDataCaro(lang,(err, data) => {
+    const {streams} = data; // 即 const streams = data.streams;
+    const $carousel_slide = $('.carousel_model'); // html 裏的 class='deafult-row'
+    console.log("streams");
+    $carousel_slide.append(getCaro(streams));
+  })
+}
 
 $(document).ready(() =>{
   appendData(LANG);
+  appendCaro(LANG);
   console.log("etes");
   $(window).scroll(() => {
     if($(window).scrollTop() + $(window).height() > $(document).height() - 200)
@@ -79,3 +104,49 @@ function getColumn(data)
   `
 }
 
+function getCaro(data)
+{
+  return `
+  <div id="demo" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+      <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+      </ul>
+      
+      <!-- The slideshow -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="${data[0].preview.large}" alt="Los Angeles" width="1100" height="500">
+          <div class="carousel-caption">
+            <h3>${data[0].channel.display_name}</h3>
+            <p>${data[0].channel.status}</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="${data[1].preview.large}" alt="Chicago" width="1100" height="500">
+          <div class="carousel-caption">
+            <h3>${data[1].channel.display_name}</h3>
+            <p>${data[1].channel.status}</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="${data[2].preview.large}" alt="New York" width="1100" height="500">
+          <div class="carousel-caption">
+            <h3>${data[2].channel.display_name}</h3>
+            <p>${data[2].channel.status}</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Left and right controls -->
+      <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+  `
+}
