@@ -139,7 +139,7 @@ function getCaro(data)
           </div>
         
           <div class="carousel-item">
-            <a href="${data[0].channel.url}">
+            <a href="${data[2].channel.url}">
               <img src="${data[2].preview.large}" alt="New York" width="1100" height="500">
             </a>
             <div class="carousel-caption">
