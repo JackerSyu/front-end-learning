@@ -117,27 +117,36 @@ function getCaro(data)
       
       <!-- The slideshow -->
       <div class="carousel-inner">
+        
         <div class="carousel-item active">
-          <img src="${data[0].preview.large}" alt="Los Angeles" width="1100" height="500">
+          <a href="${data[0].channel.url}">
+            <img src="${data[0].preview.large}" alt="Los Angeles" width="1100" height="500">
+          </a>
           <div class="carousel-caption">
             <h3>${data[0].channel.display_name}</h3>
             <p>${data[0].channel.status}</p>
           </div>
         </div>
-        <div class="carousel-item">
-          <img src="${data[1].preview.large}" alt="Chicago" width="1100" height="500">
-          <div class="carousel-caption">
-            <h3>${data[1].channel.display_name}</h3>
-            <p>${data[1].channel.status}</p>
+        
+          <div class="carousel-item">
+          <a href="${data[1].channel.url}">
+            <img src="${data[1].preview.large}" alt="Chicago" width="1100" height="500">
+          </a>
+            <div class="carousel-caption">
+              <h3>${data[1].channel.display_name}</h3>
+              <p>${data[1].channel.status}</p>
+            </div>
           </div>
-        </div>
-        <div class="carousel-item">
-          <img src="${data[2].preview.large}" alt="New York" width="1100" height="500">
-          <div class="carousel-caption">
-            <h3>${data[2].channel.display_name}</h3>
-            <p>${data[2].channel.status}</p>
+        
+          <div class="carousel-item">
+            <a href="${data[0].channel.url}">
+              <img src="${data[2].preview.large}" alt="New York" width="1100" height="500">
+            </a>
+            <div class="carousel-caption">
+              <h3>${data[2].channel.display_name}</h3>
+              <p>${data[2].channel.status}</p>
+            </div>
           </div>
-        </div>
       </div>
       
       <!-- Left and right controls -->
