@@ -1,6 +1,6 @@
 # Huli front-end mentor program
 
-## [click here to watch the page](https://jackersyu.github.io/front-end-learning/huli-1)
+## [click here to watch the page](https://jackersyu.github.io/front-end-learning/twitch_v2/huli-2/)
 ## [Twitch API Pracetice](https://timothysyu.000webhostapp.com/)
 ## [back-end-learning](https://github.com/JackerSyu/back-end-mentor)
 ## [from huli's Lidemy](https://www.lidemy.com/)
