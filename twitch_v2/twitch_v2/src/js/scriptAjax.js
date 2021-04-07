@@ -1,4 +1,4 @@
-var clientId = 'wnlc89u86vwa7lrmdnzz7haxdatq1z';
+var clientId = '7xrokwvayhyqw2zpaq0fhdo1sdahvf';
 var limit = 2;
 var apiUrl = 'https://api.twitch.tv/kraken/streams/?client_id=' + clientId + '&game=League%20of%20Legends&limit='+ limit;
 
